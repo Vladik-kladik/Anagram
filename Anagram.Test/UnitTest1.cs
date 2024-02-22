@@ -31,6 +31,13 @@ namespace Unit_Test_Anagram;
            string reversedSentence = anagram.Reverse(null);
            Assert.Null(reversedSentence);
         }
-
+        
+        [Test]
+        public void Reverse_NullWord_ReturnsNull()
+        {
+            var anagram = new Anagram();
+            string reversedSentence = anagram.Reverse(null);
+            Assert.Null(reversedSentence);
+        }
       
     }
