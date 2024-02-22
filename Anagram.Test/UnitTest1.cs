@@ -28,7 +28,7 @@ namespace Unit_Test_Anagram;
         public void ReverseWord_NullWord_ReturnsNull()
         {
            var anagram = new Anagram();
-           string reversedSentence = anagram.Reverse(null);
+           string reversedSentence = anagram.ReversedWord(null);
            Assert.Null(reversedSentence);
         }
 
