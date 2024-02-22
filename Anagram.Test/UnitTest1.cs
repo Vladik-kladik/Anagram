@@ -19,6 +19,7 @@ namespace Unit_Test_Anagram;
         [Test]
         public void ReverseWord_WithNonAlnon_alphabetic_characters()
         {
+            Anagram anagram = new Anagram();
             string reversedSentence = new Anagram().ReversedWord("123abc!412");
             Assert.That(reversedSentence, Is.EqualTo("214!cba321"));
         }
@@ -26,9 +27,9 @@ namespace Unit_Test_Anagram;
         [Test]
         public void ReverseWord_NullWord_ReturnsNull()
         {
-            string reversedSentence = new Anagram().Reverse(null);
-            Assert.That(reversedSentence, Is.Null);
-          
+           var anagram = new Anagram();
+           string reversedSentence = anagram.Reverse(null);
+           Assert.Null(reversedSentence);
         }
 
       
