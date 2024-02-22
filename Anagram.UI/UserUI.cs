@@ -4,7 +4,7 @@ using Test1_Anagram;
 namespace Test1_Anagram
 
 {
-    internal class Program : Anagram
+    internal class UserUI : Anagram
     {
         public void Run()
         {
@@ -30,7 +30,7 @@ namespace Test1_Anagram
         
         public static void Main(string[] args)
         {
-            var program = new Program();
+            var program = new UserUI();
             program.Run();
         }
     }

@@ -4,18 +4,15 @@ public class Anagram
 {
         public string ReversedWord(string userinput)
     {
-
         if (userinput == null)
         {
             return null;
         }
 
         char[] charArray = userinput.ToCharArray();
-
+        
         int start = 0;
         int end = charArray.Length - 1;
-
-
         while (start < end)
         {
             char temp = charArray[start];
@@ -25,9 +22,7 @@ public class Anagram
             start++;
             end--;
         }
-
         return new string(charArray);
-
     }
 
     public string Reverse(string userinput)
@@ -36,16 +31,13 @@ public class Anagram
         {
             return null;
         }
-
         string[] natureWords = userinput.Split(' ');
-
         foreach (var word in natureWords)
         {
             int index = Array.IndexOf(natureWords, word);
 
             natureWords[index] = Reverse(word);
         }
-
         return string.Join(" ", natureWords);
     }
 }
