@@ -1,36 +1,7 @@
-<<<<<<< HEAD
-using System.Text;
-
-=======
->>>>>>> 673484d (1. Створив Класси, переназвав їх згідно із вправками)
 namespace Test1_Anagram;
 
 public class Anagram
 {
-<<<<<<< HEAD
-    private string ReversedWord(string userinput)
-    {
-        var natureWords = new StringBuilder();
-        var idx = userinput.Length - 1;
-
-        for (var i = 0; i < userinput.Length; i++)
-        {
-            if (char.IsLetter(userinput[i]))
-            {
-                while (!char.IsLetter(userinput[idx]))
-                {
-                    idx--;
-                }
-                natureWords.Append(userinput[idx]);
-                idx--;
-            }
-            else
-            {
-                natureWords.Insert(i, userinput[i]);
-            }
-        }
-        return natureWords.ToString();
-=======
         public string ReversedWord(string userinput)
     {
         if (userinput == null)
@@ -52,29 +23,12 @@ public class Anagram
             end--;
         }
         return new string(charArray);
->>>>>>> 673484d (1. Створив Класси, переназвав їх згідно із вправками)
     }
 
     public string Reverse(string userinput)
     {
         if (userinput == null)
         {
-<<<<<<< HEAD
-            return string.Empty;
-        }
-        
-        string[] natureWords = userinput.Split(' ');
-        var sb = new StringBuilder();
-
-        foreach (var word in natureWords)
-        {
-            sb.Append(ReversedWord(word));
-            sb.Append(' ');
-        }
-
-        sb.Remove(sb.Length - 1, 1);
-        return sb.ToString();
-=======
             return null;
         }
         string[] natureWords = userinput.Split(' ');
@@ -85,6 +39,5 @@ public class Anagram
             natureWords[index] = Reverse(word);
         }
         return string.Join(" ", natureWords);
->>>>>>> 673484d (1. Створив Класси, переназвав їх згідно із вправками)
     }
 }
