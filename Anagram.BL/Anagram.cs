@@ -2,7 +2,7 @@ namespace Test1_Anagram;
 
 public class Anagram
 {
-        public string ReversedWord(string userinput)
+        protected string ReversedWord(string userinput)
     {
         if (userinput == null)
         {
@@ -31,13 +31,14 @@ public class Anagram
         {
             return null;
         }
+        
         string[] natureWords = userinput.Split(' ');
-        foreach (var word in natureWords)
+        
+        for (int i = 0; i < natureWords.Length; i++)
         {
-            int index = Array.IndexOf(natureWords, word);
-
-            natureWords[index] = Reverse(word);
+            natureWords[i] = ReversedWord(natureWords[i]);
         }
         return string.Join(" ", natureWords);
+        
     }
 }
