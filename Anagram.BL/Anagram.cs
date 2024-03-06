@@ -45,6 +45,7 @@ public class Anagram
         }
 
         sb.Remove(sb.Length - 1, 1);
-        return sb.ToString();
+        var result = String.Join("", natureWords);
+        return result;
     }
 }

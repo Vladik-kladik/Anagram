@@ -9,9 +9,10 @@ namespace Test1_Anagram
         public void Run()
         {
             Console.WriteLine("Well Come to Program");
-
+        
             var anagram = new Anagram();
-            string userInput;
+            var userInput = String.Empty;
+            
 
             do
             {

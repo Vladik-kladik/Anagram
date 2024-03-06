@@ -6,12 +6,27 @@ namespace Unit_Test_Anagram;
 
     public class Tests
     {
+        private Anagram _anagram;
+        
+        [SetUp]
+        public void SetUp()
+        {
+            _anagram = new Anagram();
+        }
+
+        [TearDown]
+        public void TearDown()
+        {
+            _anagram = null;
+        }
 
         [Test]
         public void Revers_ValidWord_returnsRevers()
         {
-            Anagram anagram = new Anagram();
-            string reversedSentence = anagram.Reverse("a1bcd efg!h");
+            
+            // act
+            string reversedSentence = _anagram.Reverse("a1bcd efg!h");
+            // assert
             Assert.That(reversedSentence, Is.EqualTo("d1cba hgf!e"));
         }
         
@@ -19,8 +34,10 @@ namespace Unit_Test_Anagram;
         [Test]
         public void ReverseWord_WithNonAlnon_alphabetic_characters()
         {
-            Anagram anagram = new Anagram();
-            string reversedSentence = new Anagram().Reverse("  a1bcd    efg!h");
+            
+            // act
+            string reversedSentence = _anagram.Reverse("  a1bcd    efg!h");
+            //assert
             Assert.That(reversedSentence, Is.EqualTo("  d1cba    hgf!e"));
         }
         
@@ -28,11 +45,11 @@ namespace Unit_Test_Anagram;
         [Test]
         public void Reverse_WithNullOrEmptyInput()
         {
-            var anagram = new Anagram();
             
-            var resultNull = anagram.Reverse(null);
-            var resultEmpty = anagram.Reverse(string.Empty);
-            
+            // act
+            var resultNull = _anagram.Reverse(null);
+            var resultEmpty = _anagram.Reverse(string.Empty);
+            // assert
             Assert.AreEqual(string.Empty, resultNull);
             Assert.AreEqual(string.Empty, resultEmpty);
            
