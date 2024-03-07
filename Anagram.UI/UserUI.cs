@@ -24,7 +24,11 @@ namespace Test1_Anagram
 
             } while (string.IsNullOrEmpty(userInput));
 
+<<<<<<< HEAD
             Console.WriteLine("Reversed Word: " + anagram.Reverse(userInput));
+=======
+            Console.WriteLine("Reversed Word: " + anagram.ReversedWord(userInput));
+>>>>>>> origin/main
         }
         
         public static void Main(string[] args)

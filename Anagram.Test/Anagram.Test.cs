@@ -15,7 +15,6 @@ namespace Unit_Test_Anagram;
             Assert.That(reversedSentence, Is.EqualTo("!dlroW olleH"));
         }
         
-      
         [Test]
         public void ReverseWord_WithNonAlnon_alphabetic_characters()
         {

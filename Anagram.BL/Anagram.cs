@@ -1,43 +1,50 @@
+using System.Text;
+
 namespace Test1_Anagram;
 
 public class Anagram
 {
-        public string ReversedWord(string userinput)
+    private string ReversedWord(string userinput)
     {
-        if (userinput == null)
-        {
-            return null;
-        }
+        var natureWords = new StringBuilder();
+        var idx = userinput.Length - 1;
 
-        char[] charArray = userinput.ToCharArray();
-        
-        int start = 0;
-        int end = charArray.Length - 1;
-        while (start < end)
+        for (var i = 0; i < userinput.Length; i++)
         {
-            char temp = charArray[start];
-            charArray[start] = charArray[end];
-            charArray[end] = temp;
-
-            start++;
-            end--;
+            if (char.IsLetter(userinput[i]))
+            {
+                while (!char.IsLetter(userinput[idx]))
+                {
+                    idx--;
+                }
+                natureWords.Append(userinput[idx]);
+                idx--;
+            }
+            else
+            {
+                natureWords.Insert(i, userinput[i]);
+            }
         }
-        return new string(charArray);
+        return natureWords.ToString();
     }
 
     public string Reverse(string userinput)
     {
         if (userinput == null)
         {
-            return null;
+            return string.Empty;
         }
+        
         string[] natureWords = userinput.Split(' ');
+        var sb = new StringBuilder();
+
         foreach (var word in natureWords)
         {
-            int index = Array.IndexOf(natureWords, word);
-
-            natureWords[index] = Reverse(word);
+            sb.Append(ReversedWord(word));
+            sb.Append(' ');
         }
-        return string.Join(" ", natureWords);
+
+        sb.Remove(sb.Length - 1, 1);
+        return sb.ToString();
     }
 }
