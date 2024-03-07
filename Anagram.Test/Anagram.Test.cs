@@ -30,7 +30,6 @@ namespace Unit_Test_Anagram;
             Assert.That(reversedSentence, Is.EqualTo("d1cba hgf!e"));
         }
         
-      
         [Test]
         public void ReverseWord_WithNonAlnon_alphabetic_characters()
         {
@@ -41,7 +40,6 @@ namespace Unit_Test_Anagram;
             Assert.That(reversedSentence, Is.EqualTo("  d1cba    hgf!e"));
         }
         
-               
         [Test]
         public void Reverse_WithNullOrEmptyInput()
         {

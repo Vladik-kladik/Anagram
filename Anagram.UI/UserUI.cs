@@ -2,7 +2,6 @@
 using Test1_Anagram;
 
 namespace Test1_Anagram
-
 {
     internal class UserUI : Anagram
     {
@@ -13,7 +12,6 @@ namespace Test1_Anagram
             var anagram = new Anagram();
             var userInput = String.Empty;
             
-
             do
             {
                 Console.WriteLine("Please Enter a Word: ");
