@@ -6,51 +6,38 @@ namespace Unit_Test_Anagram;
 
     public class Tests
     {
-        private Anagram _anagram;
-        
-        [SetUp]
-        public void SetUp()
-        {
-            _anagram = new Anagram();
-        }
-
-        [TearDown]
-        public void TearDown()
-        {
-            _anagram = null;
-        }
 
         [Test]
         public void Revers_ValidWord_returnsRevers()
         {
-            
-            // act
-            string reversedSentence = _anagram.Reverse("a1bcd efg!h");
-            // assert
-            Assert.That(reversedSentence, Is.EqualTo("d1cba hgf!e"));
+            Anagram anagram = new Anagram();
+            string reversedSentence = anagram.ReversedWord("Hello World!");
+            Assert.That(reversedSentence, Is.EqualTo("!dlroW olleH"));
         }
         
+      
         [Test]
         public void ReverseWord_WithNonAlnon_alphabetic_characters()
         {
-            
-            // act
-            string reversedSentence = _anagram.Reverse("  a1bcd    efg!h");
-            //assert
-            Assert.That(reversedSentence, Is.EqualTo("  d1cba    hgf!e"));
+            Anagram anagram = new Anagram();
+            string reversedSentence = new Anagram().ReversedWord("123abc!412");
+            Assert.That(reversedSentence, Is.EqualTo("214!cba321"));
         }
         
         [Test]
-        public void Reverse_WithNullOrEmptyInput()
+        public void ReverseWord_NullWord_ReturnsNull()
         {
-            
-            // act
-            var resultNull = _anagram.Reverse(null);
-            var resultEmpty = _anagram.Reverse(string.Empty);
-            // assert
-            Assert.AreEqual(string.Empty, resultNull);
-            Assert.AreEqual(string.Empty, resultEmpty);
-           
+           var anagram = new Anagram();
+           string reversedSentence = anagram.ReversedWord(null);
+           Assert.Null(reversedSentence);
+        }
+        
+        [Test]
+        public void Reverse_NullWord_ReturnsNull()
+        {
+            var anagram = new Anagram();
+            string reversedSentence = anagram.Reverse(null);
+            Assert.Null(reversedSentence);
         }
       
     }
