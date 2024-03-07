@@ -40,11 +40,11 @@ public class Anagram
 
         foreach (var word in natureWords)
         {
-            sb.Append(string.Join(' ', natureWords.Select(ReversedWord)));
+            sb.Append(ReversedWord(word)).Append(' ');
         }
 
         sb.Remove(sb.Length - 1, 1);
-        var result = String.Join("", natureWords);
-        return result;
+        
+        return sb.ToString();
     }
 }
